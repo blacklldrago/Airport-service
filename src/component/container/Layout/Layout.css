@@ -1,0 +1,179 @@
+.container{
+    max-width: 1700px;
+    margin: 0 auto;
+}
+.footer p,  .footer ul{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #757575;
+}
+.footer h1{
+    color: #757575;
+    font-weight: 600;
+}
+.lines{
+    display: none;
+}
+select, input{
+    outline: none;
+}
+select{
+    border-radius: 10px;
+    cursor: pointer;
+}
+input{
+    border: 1px solid #E1E1E1;
+    padding-left: 10px;
+}
+.pick{
+    position: relative;
+    bottom: 10px;
+}
+.register{
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+}
+.login{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.mini span{
+    position: relative;
+    bottom: 460px;
+    right: 10px;
+    cursor: pointer;
+}
+.times span:hover, .mini span:hover{
+    color:red;
+    transition: 0.5s;
+}
+@media only screen and (min-width: 360px ) and (max-width: 700px) {
+    .times span{
+        float: right;
+        position: relative;
+        bottom: 250px;
+        right: 20px;
+        cursor: pointer;
+    }
+    .register{
+        width: 300px;
+    }
+    .register button{
+        width: 200px;
+    }
+    .register input{
+        width: 270px;
+    }
+    .lines{
+        display: block;
+    }
+    .modal{
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    .polo{
+        padding-top: 100px;
+    }
+    .polo ul li{
+        padding-bottom: 20px;
+    }
+    .pop{
+        display: none;
+    }
+    .kola{
+        width: 50px;
+        margin: 20px auto;
+    }
+    
+    
+
+
+    
+    .lines{
+        display: block;
+    }
+    .f{
+        display: none;
+    }
+    .first, .second, .third, .last{
+        margin-bottom: 20px;
+    }
+    .sea input{
+        display: block;
+    }
+    .on{
+        margin-left: 9px;
+    }
+    .hey button{
+        margin-top: 20px;
+    }
+    .hey{
+        padding-top: 30px;
+        width: 300px;
+        height: 480px;
+    }
+    .heyy{
+        padding-top: 50px;
+        width: 300px;
+        height: 380px;
+    }
+    .sea h1, .room h1{
+        width: 300px;
+    }
+    .sea, .room{
+        height: 1000px;
+    }
+    .heyy button{
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}
+@media only screen and (min-width: 700px ) and (max-width: 1280px) {
+
+    .f{
+        display: none;
+    }
+    .first, .second, .third, .last{
+        margin-bottom: 20px;
+    }
+    .sea input{
+        display: block;
+    }
+    .on{
+        margin-left: 9px;
+    }
+    .hey button{
+        margin-top: 20px;
+    }
+    .hey{
+        padding-top: 30px;
+        width: 300px;
+        height: 480px;
+    }
+    .heyy{
+        padding-top: 50px;
+        width: 300px;
+        height: 380px;
+    }
+    .sea h1, .room h1{
+        width: 600px;
+    }
+    .sea, .room{
+        height: 1000px;
+    }
+    .heyy button{
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}
