@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import './Flights.css'
 import plane from './plane.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Flights  ()  {
   const [ lng, setLng ] = useState('ru')
   const { t, i18n } = useTranslation();
@@ -10,19 +12,21 @@ function Flights  ()  {
   const changeLanguage = (language) => (
     i18n.changeLanguage(language)
   );
-
   const handleChange = (event) => {
     const { value } = event.target
     changeLanguage(value)
     setLng(value)
   }
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (<div>
       <div className='sea h-[80vh]'>
         <div className='text-center'>
         <div className='w-[5%] m-auto pt-[20px] '></div>
-        <h1 className='pt-[100px] font-[700] text-[35px] mt-[40px] text-[white] dark:text-[black] w-[812px] m-[auto]'>{t("text4")}</h1>
+        <h1 data-aos="fade-down" data-aos-duration="3000" className='pt-[100px] font-[700] text-[35px] mt-[40px] text-[white] dark:text-[black] w-[812px] m-[auto]'>{t("text4")}</h1>
         </div>
-        <div className='hey bg-[white] dark:bg-[black] w-[1260px] rounded-[20px] h-[150px] m-auto mt-[100px]'>
+        <div data-aos="fade-down" data-aos-duration="3000" className='hey bg-[white] dark:bg-[black] w-[1260px] rounded-[20px] h-[150px] m-auto mt-[100px]'>
           <div className='w-[86%] m-auto'>
           <input className='on mt-[50px]w-[216px] h-[42px]' placeholder={t("text5")} type="text" name="" id="" />
           <input className='ml-[10px] mt-[50px] w-[216px] h-[42px] ' placeholder={t("text6")} type="text" name="" id="" />

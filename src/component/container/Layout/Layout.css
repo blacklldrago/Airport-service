@@ -53,7 +53,14 @@ input{
     color:red;
     transition: 0.5s;
 }
+body{
+    overflow-x: hidden;
+}
 @media only screen and (min-width: 360px ) and (max-width: 700px) {
+    
+    body{
+        overflow-x: hidden;
+    }
     .times span{
         float: right;
         position: relative;
@@ -140,7 +147,10 @@ input{
     }
 }
 @media only screen and (min-width: 700px ) and (max-width: 1280px) {
-
+    
+    body{
+        overflow-x: hidden;
+    }
     .f{
         display: none;
     }

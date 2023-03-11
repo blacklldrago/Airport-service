@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import './Layout.css'
 import logo from './logo.png'
@@ -9,6 +9,8 @@ import menu4 from './menu4.png'
 import menu2 from './menu2.jpg'
 import { useTranslation } from 'react-i18next'
 import Switcher from '../../../Switcher'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Layout () {
   const [ lng, setLng ] = useState('ru')
   const { t, i18n } = useTranslation();
@@ -23,9 +25,12 @@ function Layout () {
     changeLanguage(value)
     setLng(value)
   }
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (<div>
     <div className="container">
-      <div className="navbar  pt-[30px] bg-[#0C51FD] dark:bg-[black] h-[100px] flex justify-evenly">
+      <div data-aos="fade-down" data-aos-duration="3000" className="navbar  pt-[30px] bg-[#0C51FD] dark:bg-[black] h-[100px] flex justify-evenly">
         <div className="start">
           <img className='h-[40px] w-[112px] pb-[10px]' src={logo} alt="" />
         </div>
@@ -54,7 +59,7 @@ function Layout () {
           <div className="enter">
             <button onClick={()=>setLog(!log)} className='rounded-[10px] mb-[20px] h-[40px] w-[120px] bg-[#18EEF7] text-[white] dark:text-[black] font-[500] text-[20px]'>{t("text3")}</button>
             {
-              log && <div className='login pt-[100px] bg-[#2727279f] dark:bg-[#f4f1f1c0]'> 
+              log && <div  data-aos="fade-down" data-aos-duration="300" className='login pt-[100px] bg-[#2727279f] dark:bg-[#f4f1f1c0]'> 
                   <div className="register  rounded-[20px] text-center pt-[30px] dark:bg-[black]">
                   <img className='h-[40px] w-[112px] mb-[20px] m-auto ' src={logo} alt="" />
                   <p className='pb-[40px] text-[20px] font-[600] dark:text-[white]'>{t("text21")}</p>
@@ -90,7 +95,7 @@ function Layout () {
             <img className='h-[40px] dark:hidden' onClick={()=>setModal(!modal)} src={menu}  alt="" />
             <img className='h-[40px] hidden dark:block' onClick={()=>setModal(!modal)} src={menu4}  alt="" />
             {
-              modal && <div className='modal'>
+              modal && <div data-aos="fade-down" data-aos-duration="300" className='modal'>
               <div className='polo'>
                 <ul >
                   <li onClick={()=>setModal(!modal)}  className='text-[white] font-[600] text-[20px]'><Link to={"/air"}>{t("text1")}</Link></li>
@@ -127,17 +132,17 @@ function Layout () {
           <img src={yata} className = " dark:hidden" alt="" />
         </div>
         <div className='second'>
-          <h1 className='mb-[15px] dark:text-[white]'>{t("text10")}</h1>
-          <p className='mb-[15px] dark:text-[white]'>Don Avia Trans</p>
-          <p className='mb-[15px] dark:text-[white]'>{t("text15")}</p>
+          <h1 data-aos="fade-down" data-aos-duration="300"  className='mb-[15px] dark:text-[white]'>{t("text10")}</h1>
+          <p data-aos="fade-down" data-aos-duration="300"  className='mb-[15px] dark:text-[white]'>Don Avia Trans</p>
+          <p data-aos="fade-down" data-aos-duration="300"  className='mb-[15px] dark:text-[white]'>{t("text15")}</p>
         </div>
         <div className='third'>
-          <h1 className='mb-[15px] dark:text-[white]' >{t("text11")}</h1>
+          <h1 data-aos="fade-down" data-aos-duration="300"  className='mb-[15px] dark:text-[white]' >{t("text11")}</h1>
           <p className='mb-[15px] dark:text-[white]'><Link to = {"https://top.uz/company/don-avia-trans-ooo-aviakassa-1"}>dat-tas@mail.ru</Link></p>
           <p className='mb-[15px] dark:text-[white]'><Link to = {"https://top.uz/company/don-avia-trans-ooo-aviakassa-1"}>dat-tas@mail.ru</Link></p>
         </div>
         <div className='last'>
-          <h1 className='mb-[15px] dark:text-[white]'>{t("text12")}</h1>
+          <h1 data-aos="fade-down" data-aos-duration="300"  className='mb-[15px] dark:text-[white]'>{t("text12")}</h1>
           <ul>
             <li className='mb-[15px] dark:text-[white]'><Link to = {'/air'}>{t("text1")}</Link></li>
             <li className='mb-[15px] dark:text-[white]'><Link to = {'/hotels'}>{t("text2")}</Link></li>
@@ -151,9 +156,9 @@ function Layout () {
             <img src={cards}  alt="" />
           </div>
           <div className='flex gap-[20px] flex-wrap '>
-            <div><p className='dark:text-[white]'>{t("text13")}</p></div>
+            <div><p data-aos="fade-down" data-aos-duration="300"  className='dark:text-[white]'>{t("text13")}</p></div>
             
-            <div><p className='dark:text-[white]'>{t("text14")}</p></div>
+            <div><p data-aos="fade-down" data-aos-duration="300"  className='dark:text-[white]'>{t("text14")}</p></div>
           </div>
         </div>
       </div>
